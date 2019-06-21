@@ -15,10 +15,10 @@ def DecisionTree_L1(X_pseudo, car_id, action_space, params, Level_ratio):
     R1_min, R2_min, R3_min = 1e10, 1e10, 1e10
     dist_comb = params.dist_comb
 
-    Q_value_min = [[Q_init]] * action_space.size
-    action_id_min = [[]] * action_space.size
-    Q_value_min_opt = [[]] * action_space.size
-    index_min_opt = [[]] * action_space.size
+    Q_value_2 = [[Q_init]] * action_space.size
+    action_id_2 = [[]] * action_space.size
+    Q_value_2_min = [[]] * action_space.size
+    index_2_min = [[]] * action_space.size
 
     Buffer[0] = X_pseudo1[0]
 
@@ -44,35 +44,47 @@ def DecisionTree_L1(X_pseudo, car_id, action_space, params, Level_ratio):
                         X_old1 = Buffer[k]
                         X_new, R2 = environment.environment(X_old1, car_id, id_2, t_step_DT, params, dist_id,
                                                             Level_ratio)
+
+                        if Q_value[id_1][0] == Q_init:
+                            Q_value[id_1] = [R1 + R2 * discount]
+                        else:
+                            Q_value[id_1] = Q_value[id_1] + list([R1 + R2 * discount])
+                        if action_id[id_1] == []:
+                            action_id[id_1] = [[id_1, id_2]]
+                        else:
+                            action_id[id_1] = action_id[id_1] + list([[id_1, id_2]])
+
+
+
                         R2_max = max(R2_max, R2)
 
-                        if R2 < R2_min:
+                        if 1:
 
                             R2_min = min(R2_min, R2)
 
-                            if Q_value_min[id_2][0] == Q_init:
-                                Q_value_min[id_2] = [R1_min + R2_min * discount]
+                            if Q_value_2[id_2][0] == Q_init:
+                                Q_value_2[id_2] = [R1_min + R2_min * discount]
                             else:
-                                Q_value_min[id_2] = Q_value_min[id_2] + list([R1_min + R2_min * discount])
-                            if action_id_min[id_2] == []:
-                                action_id_min[id_2] = [[id_1, id_2]]
+                                Q_value_2[id_2] = Q_value_2[id_2] + list([R1_min + R2_min * discount])
+                            if action_id_2[id_2] == []:
+                                action_id_2[id_2] = [[id_1, id_2]]
                             else:
-                                action_id_min[id_2] = action_id_min[id_2] + list([[id_1, id_2]])
+                                action_id_2[id_2] = action_id_2[id_2] + list([[id_1, id_2]])
 
-                    Q_value_min_opt[id_2] = min(Q_value_min[id_2])
-                    index_min_opt[id_2] = Q_value_min[id_2].index(min(Q_value_min[id_2]))
-
-                    id_min_opt = Q_value_min_opt.index(min(Q_value_min[id_2]))
-                    Action_id_min = action_id_min[id_min_opt][index_min_opt[id_min_opt]]
-
-                    if Q_value[id_1][0] == Q_init:
-                        Q_value[id_1] = [R1_min + Q_value_min_opt[id_2] * discount]
-                    else:
-                        Q_value[id_1] = Q_value[id_1] + list([R1_min + Q_value_min_opt[id_2] * discount])
-                    if action_id[id_1] == []:
-                        action_id[id_1] = [[id_1, id_min_opt]]
-                    else:
-                        action_id[id_1] = action_id[id_1] + list([[id_1, id_min_opt]])
+                    # Q_value_2_min[id_2] = min(Q_value_2[id_2])
+                    # index_2_min[id_2] = Q_value_2[id_2].index(min(Q_value_2[id_2]))
+                    #
+                    # id_min_opt = Q_value_2_min.index(min(Q_value_2[id_2]))
+                    # Action_id_min = action_id_2[id_min_opt][index_2_min[id_min_opt]]
+                    #
+                    # if Q_value[id_1][0] == Q_init:
+                    #     Q_value[id_1] = [R1_min + Q_value_2_min[id_2] * discount]
+                    # else:
+                    #     Q_value[id_1] = Q_value[id_1] + list([R1_min + Q_value_2_min[id_2] * discount])
+                    # if action_id[id_1] == []:
+                    #     action_id[id_1] = [[id_1, id_min_opt]]
+                    # else:
+                    #     action_id[id_1] = action_id[id_1] + list([[id_1, id_min_opt]])
 
                         # if R2 < R2_max +dR_drop:
                         #     continue

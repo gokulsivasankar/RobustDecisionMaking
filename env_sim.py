@@ -7,8 +7,8 @@ import traff
 import numpy as np
 import numpy.matlib
 import matplotlib.pyplot as plt
-import decisiontree_l0
-import DecisionTree_L1
+import decisiontree_l01
+import DecisionTree_L11
 import environment_multi
 import Environment_Multi_Sim
 import plot_sim
@@ -68,7 +68,7 @@ for episode in range(0, params.max_episode):    # simulation will be runned 1 ti
     # Initial frame
     plot_sim.plot_sim(X_old, params, step)
     
-    step_size = 40
+    step_size = 20
     
     for step in range(1, step_size): 
         t0 = time.time()
@@ -90,7 +90,7 @@ for episode in range(0, params.max_episode):    # simulation will be runned 1 ti
         L0_action_id =  [None]*num_cars    # set the action sizes according to car numbers
         L0_Q_value =  [None]*num_cars      # set the Q value sizes according to car numbers
         for car_id in range(0, num_cars):
-            L0_Q_value[car_id], L0_action_id[car_id] = decisiontree_l0.decisiontree_l0(X_old, car_id, action_space, params, Level_ratio)
+            L0_Q_value[car_id], L0_action_id[car_id] = decisiontree_l01.decisiontree_l0(X_old, car_id, action_space, params, Level_ratio)
         
         X_pseudo_L0 = environment_multi.environment_multi(X_old, L0_action_id, t_step_DT, params)
         
@@ -104,7 +104,7 @@ for episode in range(0, params.max_episode):    # simulation will be runned 1 ti
         L1_action_id = [None]*num_cars
         L1_Q_value = [None]*num_cars
         for car_id in range(0, num_cars):
-            L1_Q_value[car_id], L1_action_id[car_id] = DecisionTree_L1.DecisionTree_L1(X_pseudo_L0_Id[car_id], car_id, action_space,  params, Level_ratio) # Call the decision tree function
+            L1_Q_value[car_id], L1_action_id[car_id] = DecisionTree_L11.DecisionTree_L1(X_pseudo_L0_Id[car_id], car_id, action_space,  params, Level_ratio) # Call the decision tree function
         
         X_pseudo_L1 = environment_multi.environment_multi(X_old, L1_action_id, t_step_DT, params)
         

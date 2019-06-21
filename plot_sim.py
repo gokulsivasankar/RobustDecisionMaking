@@ -13,9 +13,9 @@ def plot_sim(X_old, params, step):
     l_road = params.l_road
     plot_format = params.plot_format
     car_rect_lw = 1.5
-
-
-
+    x_lim_min = min(X_old[0, :]) - 3 * l_car
+    x_lim_max = max(X_old[0, :]) + 3 * l_car
+    x_lim = np.array([x_lim_min, x_lim_max])
 
 
     color = ['b','r','m','g']
@@ -53,9 +53,15 @@ def plot_sim(X_old, params, step):
         [l_road, w_lane],
         [-3*l_car, w_lane*2],
         [l_road, w_lane*2]])
-    
-    plt.plot(np.squeeze(Lanes[0:2,0]),np.squeeze(Lanes[0:2,1]),color=(0,0,0),LineWidth = 3, linestyle='--')
-    plt.plot(np.squeeze(Lanes[2:4,0]),np.squeeze(Lanes[2:4,1]),color=(0,0,0),LineWidth = 3, linestyle='--')
+
+    if step % 2 == 0:
+        plt.plot(x_lim, np.squeeze(Lanes[0:2,1]),color=(0,0,0),LineWidth = 3, linestyle='--')
+        plt.plot(x_lim, np.squeeze(Lanes[2:4,1]),color=(0,0,0),LineWidth = 3, linestyle='--')
+
+    else:
+        plt.plot(x_lim+np.array([-l_car*2,l_car*2]), np.squeeze(Lanes[0:2, 1]), color=(0, 0, 0), LineWidth=3, linestyle='--')
+        plt.plot(x_lim+np.array([-l_car*2,l_car*2]), np.squeeze(Lanes[2:4, 1]), color=(0, 0, 0), LineWidth=3, linestyle='--')
+
 
     
        
@@ -149,7 +155,7 @@ def plot_sim(X_old, params, step):
     
     #fig = plt.figure()    
     ax = plt.gca() 
-    ax.set_xlim([min(X_old[0,:])-3*l_car, max(X_old[0,:])+3*l_car])
+    ax.set_xlim(x_lim)
     ax.set_ylim([min(Lower_RoadBound_rectangle[:,1]), max(Upper_RoadBound_rectangle[:,1])])
     
     # Display Car_id

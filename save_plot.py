@@ -7,6 +7,7 @@ def save_plot(params,step):
     plot_fname = params.outdir+'/'+params.plot_fname
     plot_format = params.plot_format
     img_array = []
+    frame_rate = 3
     
     if os.path.exists(out_fname):
         os.remove(out_fname)
@@ -19,7 +20,7 @@ def save_plot(params,step):
         img_array.append(img)
  
  
-    out = cv2.VideoWriter(out_fname,cv2.VideoWriter_fourcc('P','I','M','1'), 3, size)
+    out = cv2.VideoWriter(out_fname,cv2.VideoWriter_fourcc('m', 'p', '4', 'v'), frame_rate, size)
  
     for i in range(len(img_array)):
         out.write(img_array[i])
