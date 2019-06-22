@@ -1,36 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e4bee64e-9997-4003-8086-dc88046a3b31" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/DecisionTree_L11.py" beforeDir="false" afterPath="$PROJECT_DIR$/DecisionTree_L11.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Images/plot0.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Images/plot0.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Images/plot1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Images/plot1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Images/plot10.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Images/plot10.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Images/plot11.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Images/plot11.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Images/plot12.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Images/plot12.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Images/plot13.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Images/plot13.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Images/plot14.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Images/plot14.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Images/plot15.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Images/plot15.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Images/plot16.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Images/plot16.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Images/plot17.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Images/plot17.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Images/plot18.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Images/plot18.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Images/plot19.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Images/plot19.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Images/plot2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Images/plot2.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Images/plot20.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Images/plot20.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Images/plot21.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Images/plot21.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Images/plot22.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Images/plot22.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Images/plot23.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Images/plot23.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Images/plot24.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Images/plot24.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Images/plot25.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Images/plot25.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Images/plot26.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Images/plot26.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Images/plot3.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Images/plot3.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Images/plot4.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Images/plot4.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Images/plot5.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Images/plot5.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Images/plot6.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Images/plot6.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Images/plot8.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Images/plot8.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/env_sim.py" beforeDir="false" afterPath="$PROJECT_DIR$/env_sim.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plot_sim.py" beforeDir="false" afterPath="$PROJECT_DIR$/plot_sim.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reward.py" beforeDir="false" afterPath="$PROJECT_DIR$/reward.py" afterDir="false" />
+    <list default="true" id="e4bee64e-9997-4003-8086-dc88046a3b31" name="Default Changelist" comment="saving video">
       <change beforePath="$PROJECT_DIR$/save_plot.py" beforeDir="false" afterPath="$PROJECT_DIR$/save_plot.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -56,8 +27,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/save_plot.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
-              <caret line="27" column="4" lean-forward="true" selection-start-line="27" selection-start-column="4" selection-end-line="27" selection-end-column="4" />
+            <state relative-caret-position="105">
+              <caret line="7" column="36" lean-forward="true" selection-start-line="7" selection-start-column="36" selection-end-line="7" selection-end-column="36" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
               </folding>
@@ -188,8 +159,8 @@
         <option value="$PROJECT_DIR$/DecisionTree_L11.py" />
         <option value="$PROJECT_DIR$/reward.py" />
         <option value="$PROJECT_DIR$/get_params.py" />
-        <option value="$PROJECT_DIR$/save_plot.py" />
         <option value="$PROJECT_DIR$/env_sim.py" />
+        <option value="$PROJECT_DIR$/save_plot.py" />
       </list>
     </option>
   </component>
@@ -223,7 +194,7 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="settings.github" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -285,26 +256,33 @@
       <option name="project" value="LOCAL" />
       <updated>1561141582907</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="saving video">
+      <created>1561161584624</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1561161584624</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="956" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.12417119" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.12417119" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.6063894" visible="true" weight="0.24421297" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.6063894" weight="0.24421297" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.6775166" weight="0.25925925" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="7" weight="0.32906976" />
+      <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.49849308" visible="true" weight="0.3287037" />
       <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.4996986" weight="0.21627907" />
-      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5015069" side_tool="true" weight="0.25" />
+      <window_info active="true" anchor="bottom" id="Event Log" order="9" sideWeight="0.5015069" side_tool="true" visible="true" weight="0.3287037" />
       <window_info anchor="bottom" id="Python Console" order="10" sideWeight="0.49849308" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -313,7 +291,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="first commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="first commit" />
+    <MESSAGE value="saving video" />
+    <option name="LAST_COMMIT_MESSAGE" value="saving video" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -482,8 +461,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/save_plot.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="27" column="4" lean-forward="true" selection-start-line="27" selection-start-column="4" selection-end-line="27" selection-end-column="4" />
+        <state relative-caret-position="105">
+          <caret line="7" column="36" lean-forward="true" selection-start-line="7" selection-start-column="36" selection-end-line="7" selection-end-column="36" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
           </folding>
