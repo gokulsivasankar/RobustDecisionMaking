@@ -2,6 +2,7 @@ import math
 import numpy as np
 import numpy.matlib
 import matplotlib.pyplot as plt
+from scipy import ndimage
 
 
 def plot_sim(X_old, params, step):   
@@ -20,6 +21,12 @@ def plot_sim(X_old, params, step):
 
     color = ['b','r','m','g']
     plt.cla()
+    ax = plt.gca()
+
+    img_blue = plt.imread('blue_car.jpg')
+    img_red = plt.imread('red_car.jpg')
+
+
         
     # Road bound
     Upper_RoadBound_rectangle = np.array(
@@ -36,6 +43,7 @@ def plot_sim(X_old, params, step):
     
     plt.fill(np.squeeze(Upper_RoadBound_rectangle[:,0]),np.squeeze(Upper_RoadBound_rectangle[:,1]),color='forestgreen', LineWidth = 2)
     plt.fill(np.squeeze(Lower_RoadBound_rectangle[:,0]),np.squeeze(Lower_RoadBound_rectangle[:,1]),color='forestgreen', LineWidth = 2)
+    fig = plt.gcf()
     
     # Road bound lines
     Lanes = np.array([
@@ -108,23 +116,31 @@ def plot_sim(X_old, params, step):
                 [X_old[0,id]+l_car_safe_front/2*math.cos(X_old[2,id])+w_car_safe/2*math.sin(X_old[2,id]),
                  X_old[1,id]+l_car_safe_front/2*math.sin(X_old[2,id])-w_car_safe/2*math.cos(X_old[2,id])]])
 
+        # Create an inset axes to plot the car images
+        newax = ax.inset_axes([X_old[0,id], X_old[1,id]-3, 6, 6], transform=ax.transData)
+
         if X_old[4,id]==1:
             color_id = 0
+            img_rot = ndimage.rotate(img_blue, (X_old[2,id]) * 180 / math.pi, reshape=False, cval=255)
 
         else:
             color_id = 1
+            img_rot = ndimage.rotate(img_red, (X_old[2, id]) * 180 / math.pi, reshape=False, cval=255)
 
-        # Vehicle rectangle
-        plt.plot(np.squeeze(rect[0:2, 0]), np.squeeze(rect[0:2, 1]), color=color[color_id], LineWidth=car_rect_lw,
-                 linestyle='-')
-        plt.plot([rect[0, 0], rect[2, 0]], [rect[0, 1], rect[2, 1]], color=color[color_id], LineWidth=car_rect_lw,
-                 linestyle='-')
-        plt.plot([rect[2, 0], rect[3, 0]], [rect[2, 1], rect[3, 1]], color=color[color_id], LineWidth=car_rect_lw,
-                 linestyle='-')
-        plt.plot([rect[1, 0], rect[3, 0]], [rect[1, 1], rect[3, 1]], color=color[color_id], LineWidth=car_rect_lw,
-                 linestyle='-')
-        plt.plot([rect[4, 0], rect[5, 0]], [rect[4, 1], rect[5, 1]], color=color[color_id], LineWidth=car_rect_lw,
-                 linestyle='-')
+        newax.imshow(img_rot)
+        newax.axis('off')
+
+        # # Vehicle rectangle
+        # plt.plot(np.squeeze(rect[0:2, 0]), np.squeeze(rect[0:2, 1]), color=color[color_id], LineWidth=car_rect_lw,
+        #          linestyle='-')
+        # plt.plot([rect[0, 0], rect[2, 0]], [rect[0, 1], rect[2, 1]], color=color[color_id], LineWidth=car_rect_lw,
+        #          linestyle='-')
+        # plt.plot([rect[2, 0], rect[3, 0]], [rect[2, 1], rect[3, 1]], color=color[color_id], LineWidth=car_rect_lw,
+        #          linestyle='-')
+        # plt.plot([rect[1, 0], rect[3, 0]], [rect[1, 1], rect[3, 1]], color=color[color_id], LineWidth=car_rect_lw,
+        #          linestyle='-')
+        # plt.plot([rect[4, 0], rect[5, 0]], [rect[4, 1], rect[5, 1]], color=color[color_id], LineWidth=car_rect_lw,
+        #          linestyle='-')
 
         # # Coll rectangle
         #
@@ -154,7 +170,7 @@ def plot_sim(X_old, params, step):
     
     
     #fig = plt.figure()    
-    ax = plt.gca() 
+
     ax.set_xlim(x_lim)
     ax.set_ylim([min(Lower_RoadBound_rectangle[:,1]), max(Upper_RoadBound_rectangle[:,1])])
     

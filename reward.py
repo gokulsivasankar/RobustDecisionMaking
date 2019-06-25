@@ -16,19 +16,24 @@ def reward(X_reward, car_id, action_id, params, dist_id, Level_ratio):
     l_road = params.l_road
     num_cars = params.num_cars
     v_ref = params.v_nominal
+
+    scale_dist = 1
     
     
     if X_reward[4,car_id] == 1:
         dist_comb = params.dist_comb
         w_ext = dist_comb[dist_id]
-        W_curr = w_ext*np.array([l_car, w_car/2])
+        W_curr = w_ext*np.array([l_car/2, w_car/2])
         
      
         count = 0
         for id in range(0, num_cars):
             if id!=car_id:
                 for i in range(0,2):
-                    X_reward[i,id] = X_reward[i,id] + W_curr[i] * Level_ratio[(car_id)*(num_cars-1) + count][0]
+                    if scale_dist:
+                        X_reward[i,id] = X_reward[i,id] + W_curr[i] * Level_ratio[(car_id)*(num_cars-1) + count][0]
+                    else:
+                        X_reward[i, id] = X_reward[i, id] + W_curr[i]
                 count += 1
 
     

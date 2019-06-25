@@ -67,13 +67,13 @@ def Init_position(params,traffic,AV_cars):
         if id ==0:
             lane = 2
             lane_center = w_lane*(lane-1) + (w_lane/2) # second lane        
-            x_car = x_init + 4*l_car
+            x_car = x_init + 5*l_car
             y_car = lane_center 
             Final_y = lane_center 
         elif id == 1: # AV
             lane = 2
             lane_center = w_lane*(lane-1) + (w_lane/2) # second lane        
-            x_car = 0 +x_init + headway/2
+            x_car = 0 +x_init + 0.5*l_car
 #            x_car = 2*l_car
             y_car = lane_center 
             Final_y = w_lane*(lane) + (w_lane/2) # third lane       

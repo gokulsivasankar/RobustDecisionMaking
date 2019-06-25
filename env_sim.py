@@ -34,10 +34,11 @@ params.num_Human = num_Human
 num_lanes = params.num_lanes
 l_road = params.l_road
 outdir = params.outdir
+params.outfile = 'l0_2a.mp4'
 
 # Initial guess for the level ratio (0 1 2)
-Level_ratio = np.array([[0.05, 0.95]])
-# Level_ratio = np.array([[0.6, 0.4]])
+Level_ratio = np.array([[0.2, 0.8]])
+Level_ratio = np.array([[0.8, 0.2]])
 Level_ratio = np.matlib.repmat(Level_ratio, num_cars * (num_cars-1), 1)
 
 # action space 
