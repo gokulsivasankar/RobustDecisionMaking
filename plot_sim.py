@@ -26,7 +26,6 @@ def plot_sim(X_old, params, step):
     img_blue = plt.imread('blue_car.jpg')
     img_red = plt.imread('red_car.jpg')
 
-
         
     # Road bound
     Upper_RoadBound_rectangle = np.array(
@@ -169,8 +168,8 @@ def plot_sim(X_old, params, step):
 
     
     
-    #fig = plt.figure()    
-
+    #fig = plt.figure()
+    # Setting axes limts
     ax.set_xlim(x_lim)
     ax.set_ylim([min(Lower_RoadBound_rectangle[:,1]), max(Upper_RoadBound_rectangle[:,1])])
     
@@ -188,6 +187,7 @@ def plot_sim(X_old, params, step):
         
     plt.yticks([])
     plt.xlabel('x (m)')
+
     plt.savefig(params.outdir+'/'+params.plot_fname+str(step)+plot_format, dpi=1200)
     plt.show(block=False)
     plt.pause(0.001)

@@ -25,4 +25,3 @@ def save_plot(params,step):
     for i in range(len(img_array)):
         out.write(img_array[i])
     out.release()
-    
