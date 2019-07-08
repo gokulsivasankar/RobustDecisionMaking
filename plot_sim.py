@@ -2,7 +2,12 @@ import math
 import numpy as np
 import numpy.matlib
 import matplotlib.pyplot as plt
+import matplotlib.transforms as transforms
+import matplotlib.patches as patches
 from scipy import ndimage
+
+from PIL import Image
+from PIL import ImageChops
 
 
 def plot_sim(X_old, params, step):   
@@ -20,13 +25,29 @@ def plot_sim(X_old, params, step):
 
 
     color = ['b','r','m','g']
+    plt.figure(figsize=(6, 3))
     plt.cla()
     ax = plt.gca()
 
     img_blue = plt.imread('blue_car.jpg')
     img_red = plt.imread('red_car.jpg')
+    # img_grass = plt.imread('grass.jpg')
+    #
+    #
+    #
+    # img = Image.open('grass.jpg')
+    # img_w, img_h = img.size
+    # background = Image.new('RGBA', (4010, 900), (255, 255, 255, 255))
+    # bg_w, bg_h = background.size
+    # offset = (-100, -50)
+    # background.paste(img, offset)
+    # offset = (-10+img_w, -50)
+    # background.paste(img, offset)
+    #
+    # ImageChops.offset(background,-100)
+    #
+    # ax.imshow(background)
 
-        
     # Road bound
     Upper_RoadBound_rectangle = np.array(
         [[-3*l_car, w_lane*num_lanes],
@@ -39,9 +60,14 @@ def plot_sim(X_old, params, step):
          [-3*l_car, -w_lane*num_lanes/2],
          [l_road, -w_lane*num_lanes/2],
          [l_road, 0]])
-    
-    plt.fill(np.squeeze(Upper_RoadBound_rectangle[:,0]),np.squeeze(Upper_RoadBound_rectangle[:,1]),color='forestgreen', LineWidth = 2)
-    plt.fill(np.squeeze(Lower_RoadBound_rectangle[:,0]),np.squeeze(Lower_RoadBound_rectangle[:,1]),color='forestgreen', LineWidth = 2)
+
+    y_lim = [min(Lower_RoadBound_rectangle[:, 1]), max(Upper_RoadBound_rectangle[:, 1])]
+
+    # Plotting grass
+    plt.fill(np.squeeze(Upper_RoadBound_rectangle[:,0]),np.squeeze(Upper_RoadBound_rectangle[:,1]),color=(0,0.4,0,0.6), LineWidth = 2)
+    plt.fill(np.squeeze(Lower_RoadBound_rectangle[:,0]),np.squeeze(Lower_RoadBound_rectangle[:,1]),color=(0,0.4,0,0.6), LineWidth = 2)
+
+
     fig = plt.gcf()
     
     # Road bound lines
@@ -51,8 +77,8 @@ def plot_sim(X_old, params, step):
         [-3*l_car, w_lane*num_lanes],
         [l_road, w_lane*num_lanes]])
     
-    plt.plot(np.squeeze(Lanes[0:2,0]),np.squeeze(Lanes[0:2,1]),color=(0,0,0),LineWidth = 3, linestyle='-')
-    plt.plot(np.squeeze(Lanes[2:4,0]),np.squeeze(Lanes[2:4,1]),color=(0,0,0),LineWidth = 3, linestyle='-')
+    plt.plot(np.squeeze(Lanes[0:2,0]),np.squeeze(Lanes[0:2,1]),color=(0,0,0),LineWidth = 1.75, linestyle='-')
+    plt.plot(np.squeeze(Lanes[2:4,0]),np.squeeze(Lanes[2:4,1]),color=(0,0,0),LineWidth = 1.75, linestyle='-')
     
     # Lanes
     Lanes = np.array([
@@ -62,12 +88,12 @@ def plot_sim(X_old, params, step):
         [l_road, w_lane*2]])
 
     if step % 2 == 0:
-        plt.plot(x_lim, np.squeeze(Lanes[0:2,1]),color=(0,0,0),LineWidth = 3, linestyle='--')
-        plt.plot(x_lim, np.squeeze(Lanes[2:4,1]),color=(0,0,0),LineWidth = 3, linestyle='--')
+        plt.plot(x_lim, np.squeeze(Lanes[0:2,1]),color=(0,0,0),LineWidth = 1.25, linestyle='--')
+        plt.plot(x_lim, np.squeeze(Lanes[2:4,1]),color=(0,0,0),LineWidth = 1.25, linestyle='--')
 
     else:
-        plt.plot(x_lim+np.array([-l_car*2,l_car*2]), np.squeeze(Lanes[0:2, 1]), color=(0, 0, 0), LineWidth=3, linestyle='--')
-        plt.plot(x_lim+np.array([-l_car*2,l_car*2]), np.squeeze(Lanes[2:4, 1]), color=(0, 0, 0), LineWidth=3, linestyle='--')
+        plt.plot(x_lim+np.array([-l_car*3,l_car*3]), np.squeeze(Lanes[0:2, 1]), color=(0, 0, 0), LineWidth=1.25, linestyle='--')
+        plt.plot(x_lim+np.array([-l_car*3,l_car*3]), np.squeeze(Lanes[2:4, 1]), color=(0, 0, 0), LineWidth=1.25, linestyle='--')
 
 
     
@@ -116,7 +142,7 @@ def plot_sim(X_old, params, step):
                  X_old[1,id]+l_car_safe_front/2*math.sin(X_old[2,id])-w_car_safe/2*math.cos(X_old[2,id])]])
 
         # Create an inset axes to plot the car images
-        newax = ax.inset_axes([X_old[0,id], X_old[1,id]-3, 6, 6], transform=ax.transData)
+        newax = ax.inset_axes([X_old[0,id], X_old[1,id]-2.5, 5, 5], transform=ax.transData)
 
         if X_old[4,id]==1:
             color_id = 0
@@ -128,6 +154,26 @@ def plot_sim(X_old, params, step):
 
         newax.imshow(img_rot)
         newax.axis('off')
+
+    # # Create an inset axes to plot the grass
+    # newax = ax.inset_axes([Upper_RoadBound_rectangle[0][0], Upper_RoadBound_rectangle[0][1] - 8.2, Upper_RoadBound_rectangle[2][0] - Upper_RoadBound_rectangle[0][0], 32],
+    #                        transform=ax.transData)
+    #
+    # im = newax.imshow(img_grass)
+    # patch = patches.Rectangle([Upper_RoadBound_rectangle[0][0], Upper_RoadBound_rectangle[0][1]], sum(abs(x_lim))*300, 1000,  transform=newax.transData)
+    # im.set_clip_path(patch)
+    # # newax1.imshow(img_grass)
+    # newax.axis('off')
+    #
+    # # Create an inset axes to plot the grass
+    # newax = ax.inset_axes([x_lim[0], Lower_RoadBound_rectangle[1][1] - 8.5, sum(abs(x_lim)), 16],
+    #                        transform=ax.transData)
+    # im = newax.imshow(img_grass)
+    # patch = patches.Rectangle([x_lim[0], Lower_RoadBound_rectangle[1][1]], sum(abs(x_lim)) * 200, 370,
+    #                           transform=newax.transData)
+    # im.set_clip_path(patch)
+    # # newax2.imshow(img_grass)
+    # newax.axis('off')
 
         # # Vehicle rectangle
         # plt.plot(np.squeeze(rect[0:2, 0]), np.squeeze(rect[0:2, 1]), color=color[color_id], LineWidth=car_rect_lw,
@@ -171,7 +217,7 @@ def plot_sim(X_old, params, step):
     #fig = plt.figure()
     # Setting axes limts
     ax.set_xlim(x_lim)
-    ax.set_ylim([min(Lower_RoadBound_rectangle[:,1]), max(Upper_RoadBound_rectangle[:,1])])
+    ax.set_ylim(y_lim)
     
     # Display Car_id
     for id in range(0, len(X_old[0,:])):
@@ -186,9 +232,12 @@ def plot_sim(X_old, params, step):
 
         
     plt.yticks([])
-    plt.xlabel('x (m)')
+    # plt.xlabel('x (m)')
+    ax.axis('off')
 
     plt.savefig(params.outdir+'/'+params.plot_fname+str(step)+plot_format, dpi=1200)
     plt.show(block=False)
     plt.pause(0.001)
     plt.clf()
+
+

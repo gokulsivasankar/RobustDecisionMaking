@@ -21,7 +21,7 @@ def get_params():
                 t_step_Sim = 0.5,    # (s)             #0.25
                 discount = 0.8,      # discount factor # 0.8
                 dR_drop = -1e9,      # ?
-                num_cars = 3,        # number of cars
+                num_cars = 4,        # number of cars
                 num_AV = 1,
                 num_Human =3,
                 max_episode = 1,     # number of maximum episode

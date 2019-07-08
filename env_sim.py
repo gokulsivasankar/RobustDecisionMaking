@@ -34,7 +34,7 @@ params.num_Human = num_Human
 num_lanes = params.num_lanes
 l_road = params.l_road
 outdir = params.outdir
-params.outfile = 'l0_2a.mp4'
+params.outfile = 'l1_2a.mp4'
 
 # Initial guess for the level ratio (0 1 2)
 Level_ratio = np.array([[0.2, 0.8]])
@@ -137,7 +137,7 @@ for episode in range(0, params.max_episode):    # simulation will be runned 1 ti
                 # Action_id[car_id] = L1_action_id[car_id][0]
             else:
                 Action_id[car_id] = L1_action_id[car_id][0]
-                Action_id[car_id] = L0_action_id[car_id][0]
+                # Action_id[car_id] = L0_action_id[car_id][0]
 #                Action_id[car_id] = D1_action_id[car_id]
         print(Action_id)
 
