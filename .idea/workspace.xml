@@ -1,34 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e4bee64e-9997-4003-8086-dc88046a3b31" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Images/plot0.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Images/plot0.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Images/plot1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Images/plot1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Images/plot10.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Images/plot10.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Images/plot11.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Images/plot11.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Images/plot12.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Images/plot12.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Images/plot13.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Images/plot13.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Images/plot14.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Images/plot14.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Images/plot15.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Images/plot15.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Images/plot16.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Images/plot16.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Images/plot17.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Images/plot17.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Images/plot18.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Images/plot18.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Images/plot19.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Images/plot19.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Images/plot2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Images/plot2.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Images/plot3.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Images/plot3.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Images/plot4.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Images/plot4.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Images/plot5.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Images/plot5.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Images/plot6.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Images/plot6.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Images/plot7.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Images/plot7.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Images/plot8.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Images/plot8.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Images/plot9.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Images/plot9.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Init_position.py" beforeDir="false" afterPath="$PROJECT_DIR$/Init_position.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/env_sim.py" beforeDir="false" afterPath="$PROJECT_DIR$/env_sim.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/get_params.py" beforeDir="false" afterPath="$PROJECT_DIR$/get_params.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plot_sim.py" beforeDir="false" afterPath="$PROJECT_DIR$/plot_sim.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/save_plot.py" beforeDir="false" afterPath="$PROJECT_DIR$/save_plot.py" afterDir="false" />
-    </list>
+    <list default="true" id="e4bee64e-9997-4003-8086-dc88046a3b31" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,8 +25,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/save_plot.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="11" selection-start-line="9" selection-start-column="11" selection-end-line="9" selection-end-column="11" />
+            <state relative-caret-position="390">
+              <caret line="26" column="17" lean-forward="true" selection-start-line="26" selection-start-column="17" selection-end-line="26" selection-end-column="17" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
               </folding>
@@ -299,19 +272,26 @@
       <option name="project" value="LOCAL" />
       <updated>1561740432920</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="plotting car images">
+      <created>1562608593954</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1562608593954</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1920" height="1097" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.108478144" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.108478144" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.6063894" visible="true" weight="0.24378109" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.6063894" visible="true" weight="0.24378109" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.6769138" weight="0.27860695" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -534,8 +514,8 @@ ax = plt.gca()</expression-string>
     </entry>
     <entry file="file://$PROJECT_DIR$/save_plot.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="11" selection-start-line="9" selection-start-column="11" selection-end-line="9" selection-end-column="11" />
+        <state relative-caret-position="390">
+          <caret line="26" column="17" lean-forward="true" selection-start-line="26" selection-start-column="17" selection-end-line="26" selection-end-column="17" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
           </folding>
