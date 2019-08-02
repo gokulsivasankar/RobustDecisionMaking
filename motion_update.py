@@ -15,7 +15,7 @@ def motion_update(X_old, car_id, action_id, t_step, params):
     X_new = X_old.copy()
     AV_fac = 1  # 
     
-    steer_angle = math.pi/225
+    steer_angle = math.pi/250
     steer_angle_small = math.pi/360
     steer_angle_big = math.pi/180
     steer_angle_lane = math.pi/4

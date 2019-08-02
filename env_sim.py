@@ -13,6 +13,8 @@ import environment_multi
 import Environment_Multi_Sim
 import plot_sim
 import save_plot
+import save_level_history
+import plot_level_ratio
 import time
 import os
 
@@ -34,12 +36,19 @@ params.num_Human = num_Human
 num_lanes = params.num_lanes
 l_road = params.l_road
 outdir = params.outdir
-params.outfile = 'l1_2a.mp4'
+params.outfile = 'L1_opt.mp4'
+
+max_step = 30
+
 
 # Initial guess for the level ratio (0 1 2)
 Level_ratio = np.array([[0.2, 0.8]])
 Level_ratio = np.array([[0.8, 0.2]])
 Level_ratio = np.matlib.repmat(Level_ratio, num_cars * (num_cars-1), 1)
+
+# Define the sizes of the variables
+Level_ratio_history=np.zeros((max_episode, max_step, np.shape(Level_ratio)[0], np.shape(Level_ratio)[1]))
+R_history = np.zeros((max_episode, num_cars, max_step))
 
 # action space 
 # 0: maintain 1: turn left 2: turn right 3:accelerate 4: decelerate 5: hard brake 6:increased acceleration
@@ -65,28 +74,21 @@ for episode in range(0, params.max_episode):    # simulation will be runned 1 ti
     # Traffic state
     X_old = initial_state
     
-    step = 0
-    # Initial frame
-    plot_sim.plot_sim(X_old, params, step)
-    
-    step_size = 20
-    
-    for step in range(1, step_size): 
+
+    # Figure size
+    plt.figure(figsize=(6, 3))
+
+
+    for step in range(0, max_step):
         t0 = time.time()
-#        plt.figure(1)
-#        plt.plot(step, Level_ratio[0,0], 'b.')
-#        plt.plot(step, Level_ratio[0,1], 'r.')
-#        plt.plot(step, Level_ratio[0,2], 'g.')
-#        plt.show()
-#        plt.title('Car1')
-        
-        #plt.figure(2)
-        #plt.plot(step, Level_ratio[1,0], 'b.')
-        #plt.plot(step, Level_ratio[1,1], 'r.')
-        #plt.plot(step, Level_ratio[1,2], 'g.')
-        #plt.title('Car2')
-        
+
+        # State vector
         print(X_old)
+
+        # Animation plots
+        plot_sim.plot_sim(X_old, params, step, Level_ratio)
+
+
         # L-0
         L0_action_id =  [None]*num_cars    # set the action sizes according to car numbers
         L0_Q_value =  [None]*num_cars      # set the Q value sizes according to car numbers
@@ -157,65 +159,41 @@ for episode in range(0, params.max_episode):    # simulation will be runned 1 ti
                         Level_ratio[car_id*(num_cars-1)+count,:] = Level_ratio[car_id*(num_cars-1)+count,:]/ sum(Level_ratio[car_id*(num_cars-1)+count,:])   # normalizing
                         count = count+1
         
-        print(Level_ratio)                   
-        Level_ratio_history=np.zeros( (max_episode, step_size, np.shape(Level_ratio)[0], np.shape(Level_ratio)[1]) )
+        print(Level_ratio)
         Level_ratio_history[episode, step, :, :] = Level_ratio
                 
         # State update
         X_new, R = Environment_Multi_Sim.Environment_Multi_Sim(X_old, Action_id, params.t_step_Sim, params)
         X_old = X_new
 
-        
+
+        # Reward plot
         color = ['b','r','m','g']
-        # Animation plot
-        plot_sim.plot_sim(X_old, params, step)
-        
-        
-        
-       
-        
-        
-        R_history = np.zeros((max_episode, num_cars, step_size))
         R_history[episode, :, step] = np.transpose(R)
-        
-        
-        
         
         # plt.figure(2)
         # plt.plot(step,R[0],color='b',marker='.',markersize=16)
         # plt.plot(step,R[1],color='r',marker='.',markersize=16)
-       
-        if sum(complete_flag[episode,:])==num_cars:
-            break
-        
+
+
+        # Plot the level_history
+        ego_car_id = 1  # AV
+        opp_car_id = 3  # Car 4
+        # plot_level_ratio.plot_level_ratio(Level_ratio_history, ego_car_id, opp_car_id, params, step, episode, max_step)
+
+        # Timer
         t1 = time.time()
         time_per_step = t1 - t0
-        
-#        print(time_per_step)
-        
-        
-save_plot.save_plot(params,step)        
+        # print(time_per_step)
 
+
+        # Completion check
+        if sum(complete_flag[episode, :]) == num_cars:
+            break
+        
+save_plot.save_plot(params,step)
+# save_level_history.save_level_history(params,step)
+
+# Completion ratio for monte carlo simulation
 complete_ratio = sum(complete_flag[:,1]*complete_flag[:,2])/max_episode
 
-#fig = plt.subplots()
-#plt.plot(range(1:len(R_history[1,:,end])]*t_step_Sim,R_history(1,:,end),'b-','LineWidth',3)
-#plot([1:1:length(R_history(2,:,end))]*t_step_Sim,R_history(2,:,end),'r-','LineWidth',3)
-#xlabel('t [s]')
-#ylabel('R')
-
-#figure(21) hold on
-#plot([1:1:length(reshape(Level_ratio_history(1,1,:,end),[],1))]*t_step_Sim,reshape(Level_ratio_history(1,1,:,end),[],1),'b-','LineWidth',3)
-#plot([1:1:length(reshape(Level_ratio_history(1,1,:,end),[],1))]*t_step_Sim,reshape(Level_ratio_history(1,2,:,end),[],1),'r-','LineWidth',3)
-#plot([1:1:length(reshape(Level_ratio_history(1,1,:,end),[],1))]*t_step_Sim,reshape(Level_ratio_history(1,3,:,end),[],1),'g-','LineWidth',3)
-#title('Car 1''s estimate on car 2')
-#xlabel('t [s]')
-#ylabel('Ratio')
-
-#figure(22) hold on
-#plot([1:1:length(reshape(Level_ratio_history(1,1,:,end),[],1))]*t_step_Sim,reshape(Level_ratio_history(2,1,:,end),[],1),'b-','LineWidth',3)
-#plot([1:1:length(reshape(Level_ratio_history(1,1,:,end),[],1))]*t_step_Sim,reshape(Level_ratio_history(2,2,:,end),[],1),'r-','LineWidth',3)
-#plot([1:1:length(reshape(Level_ratio_history(1,1,:,end),[],1))]*t_step_Sim,reshape(Level_ratio_history(2,3,:,end),[],1),'g-','LineWidth',3)
-#title('Car 2''s estimate on car 1')
-#xlabel('t [s]')
-#ylabel('Ratio')

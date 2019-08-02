@@ -23,7 +23,9 @@ def reward(X_reward, car_id, action_id, params, dist_id, Level_ratio):
     if X_reward[4,car_id] == 1:
         dist_comb = params.dist_comb
         w_ext = dist_comb[dist_id]
-        W_curr = w_ext*np.array([l_car/2, w_car/2])
+        # W_curr = w_ext*np.array([l_car/2*0, w_car/2*0])
+        W_curr = w_ext * np.array([l_car / 1.89, w_car / 2])
+        # W_curr = w_ext * np.array([l_car/1.89, w_car/2])
         
      
         count = 0
@@ -43,7 +45,7 @@ def reward(X_reward, car_id, action_id, params, dist_id, Level_ratio):
     Off_road_Penalty = -1e6
 
     l_car_safe = 1.2*l_car     # 1.2
-    w_car_safe = 1.2*w_car
+    w_car_safe = 1.3*w_car
     Ego_rectangle = Polygon(
         [[X_reward[0,car_id]-l_car_safe/2*math.cos(X_reward[2,car_id])+w_car_safe/2*math.sin(X_reward[2,car_id]),
           X_reward[1,car_id]-l_car_safe/2*math.sin(X_reward[2,car_id])-w_car_safe/2*math.cos(X_reward[2,car_id])],
@@ -179,14 +181,18 @@ def reward(X_reward, car_id, action_id, params, dist_id, Level_ratio):
     Complete_Penalty = -1
 
     if X_reward[0,car_id]<X_reward[5,car_id]:
-        if X_reward[4,car_id] == 0:
+        # if X_reward[4,car_id] == 0: # if not AV
+            # x pos error
             Complete = Complete + 1e-5 * Complete_Penalty/X_reward[5,car_id]*abs(X_reward[5,car_id]-X_reward[0,car_id])
-            Complete = Complete + 1e-3 * Complete_Penalty*abs(math.sin(X_reward[2,car_id] - X_reward[7,car_id] ))        
-        elif abs(X_reward[6,car_id]-(X_reward[1,car_id])) <= 1e-0:
-            Complete = Complete + 1e-5 * Complete_Penalty/X_reward[5,car_id]*abs(X_reward[5,car_id]-X_reward[0,car_id])
+            # orientation error
             Complete = Complete + 1e-3 * Complete_Penalty*abs(math.sin(X_reward[2,car_id] - X_reward[7,car_id] ))
+
+        # elif abs(X_reward[6,car_id]-(X_reward[1,car_id])) <= 1e-0:  # if not AV and y error is within threshold
+        #
+        #     Complete = Complete + 1e-5 * Complete_Penalty/X_reward[5,car_id]*abs(X_reward[5,car_id]-X_reward[0,car_id])
+        #     Complete = Complete + 1e-3 * Complete_Penalty*abs(math.sin(X_reward[2,car_id] - X_reward[7,car_id] ))
             
-        Complete = Complete + 1e5 * Complete_Penalty/X_reward[6,car_id]*abs(X_reward[6,car_id]-(X_reward[1,car_id]))
+            Complete = Complete + 1e4 * Complete_Penalty/X_reward[6,car_id]*abs(X_reward[6,car_id]-(X_reward[1,car_id]))
         
         
     else:
@@ -195,6 +201,7 @@ def reward(X_reward, car_id, action_id, params, dist_id, Level_ratio):
  
     # Speed reward
     Speed = -1e2*abs(X_reward[3, car_id] - v_ref)
+
 
     
 
@@ -207,8 +214,7 @@ def reward(X_reward, car_id, action_id, params, dist_id, Level_ratio):
         Effort = 0
         
         
-        
-        
+
     # Encourage braking if opponent vehicle is parallel
     Brake = 0
     Brake_reward = 1e4
@@ -225,9 +231,10 @@ def reward(X_reward, car_id, action_id, params, dist_id, Level_ratio):
 
 
     # Local Reward
-    R_l = (Off_road + Colli  + Safe  *0 + Complete + Speed  + Effort*0  + Lane *0  + Lane_overlap *0 + Brake)
-    if X_reward[4,car_id] == 1 and not(abs(X_reward[6,car_id]-(X_reward[1,car_id]))<=1e-0):
-        R_l = (Off_road + Colli + Safe *0 + Complete + Speed + Effort + Lane *0 + Lane_overlap*0 + Brake)
+    R_l = (Off_road + Colli  + Safe  *0 + Complete + Speed + Effort*0  + Lane *0  + Lane_overlap *0 + Brake*0)
+    if X_reward[4,car_id] == 1 and not(abs(X_reward[6,car_id]-(X_reward[1,car_id])) <= w_lane/2.15):
+        R_l = (Off_road + Colli + Safe *0 + Complete - Speed * 1e0+ Effort *0+ Lane *0 + Lane_overlap*0 + Brake*0)
+
     params.complete_flag = complete_flag
 
 

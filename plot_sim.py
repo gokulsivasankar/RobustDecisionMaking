@@ -10,7 +10,7 @@ from PIL import Image
 from PIL import ImageChops
 
 
-def plot_sim(X_old, params, step):   
+def plot_sim(X_old, params, step, Level_ratio):
    
     w_lane = params.w_lane
     l_car = params.l_car 
@@ -18,14 +18,13 @@ def plot_sim(X_old, params, step):
     num_lanes = params.num_lanes
     l_road = params.l_road
     plot_format = params.plot_format
-    car_rect_lw = 1.5
+    car_rect_lw = 0.25
     x_lim_min = min(X_old[0, :]) - 3 * l_car
     x_lim_max = max(X_old[0, :]) + 3 * l_car
     x_lim = np.array([x_lim_min, x_lim_max])
 
 
     color = ['b','r','m','g']
-    plt.figure(figsize=(6, 3))
     plt.cla()
     ax = plt.gca()
 
@@ -142,7 +141,7 @@ def plot_sim(X_old, params, step):
                  X_old[1,id]+l_car_safe_front/2*math.sin(X_old[2,id])-w_car_safe/2*math.cos(X_old[2,id])]])
 
         # Create an inset axes to plot the car images
-        newax = ax.inset_axes([X_old[0,id], X_old[1,id]-2.5, 5, 5], transform=ax.transData)
+        newax = ax.inset_axes([X_old[0,id]-l_car/2, X_old[1,id]-2.5, 5, 5], transform=ax.transData)
 
         if X_old[4,id]==1:
             color_id = 0
@@ -212,8 +211,45 @@ def plot_sim(X_old, params, step):
 
 
 
-    
-    
+        # plot the disturbance set from the perspective of the AV
+        dist_comb = params.dist_comb
+        w_ext = dist_comb[3]    # choosing [1 1]
+        W_curr = w_ext * np.array([l_car / 1.89, w_car / 2])
+
+            # count = 0
+            # for car_id in range(0, params.num_cars):
+            #     if id != car_id:
+            #         for i in range(0, 2):
+            #             X_old[i, car_id] = X_old[i, car_id] + W_curr[i] * Level_ratio[(id) * (params.num_cars - 1) + count][0]
+            #         count += 1
+
+        ego_car_id = 1 # AV id
+
+        P0 = Level_ratio[ego_car_id * (params.num_cars - 1) + id - 1, 0]
+        W_curr *= P0
+
+        dist_rect = np.array(
+            [[X_old[0, id] - l_car / 2 * math.cos(X_old[2, id]) + w_car / 2 * math.sin(X_old[2, id]) - W_curr[0],
+              X_old[1, id] - l_car / 2 * math.sin(X_old[2, id]) - w_car / 2 * math.cos(X_old[2, id]) - W_curr[1]],
+             [X_old[0, id] - l_car / 2 * math.cos(X_old[2, id]) - w_car / 2 * math.sin(X_old[2, id]) - W_curr[0],
+              X_old[1, id] - l_car / 2 * math.sin(X_old[2, id]) + w_car / 2 * math.cos(X_old[2, id]) + W_curr[1]],
+             [X_old[0, id] + l_car / 2 * math.cos(X_old[2, id]) - w_car / 2 * math.sin(X_old[2, id]) + W_curr[0],
+              X_old[1, id] + l_car / 2 * math.sin(X_old[2, id]) + w_car / 2 * math.cos(X_old[2, id]) + W_curr[1]],
+             [X_old[0, id] + l_car / 2 * math.cos(X_old[2, id]) + w_car / 2 * math.sin(X_old[2, id]) + W_curr[0],
+              X_old[1, id] + l_car / 2 * math.sin(X_old[2, id]) - w_car / 2 * math.cos(X_old[2, id]) - W_curr[1]]])
+
+        if id != ego_car_id:
+            # Disturbance rectangle
+            plt.plot([dist_rect[0, 0], dist_rect[1, 0]], [dist_rect[0, 1], dist_rect[1, 1]], color=color[color_id], LineWidth=car_rect_lw+1,
+                     linestyle='-.')
+            plt.plot([dist_rect[1, 0], dist_rect[2, 0]], [dist_rect[1, 1], dist_rect[2, 1]], color=color[color_id], LineWidth=car_rect_lw+1,
+                     linestyle='-.')
+            plt.plot([dist_rect[2, 0], dist_rect[3, 0]], [dist_rect[2, 1], dist_rect[3, 1]], color=color[color_id], LineWidth=car_rect_lw+1,
+                     linestyle='-.')
+            plt.plot([dist_rect[0, 0], dist_rect[3, 0]], [dist_rect[0, 1], dist_rect[3, 1]], color=color[color_id], LineWidth=car_rect_lw+1,
+                     linestyle='-.')
+
+
     #fig = plt.figure()
     # Setting axes limts
     ax.set_xlim(x_lim)
@@ -222,9 +258,7 @@ def plot_sim(X_old, params, step):
     # Display Car_id
     for id in range(0, len(X_old[0,:])):
         ax.annotate(str(id+1), xy=(X_old[0, id], X_old[1, id]-0.5))
-    
-    # Used to return the plot as an image array
-       # ax.set_ylim([-6*w_lane, 6*w_lane])
+
         
         #ax.annotate('v='+str(X_old[3,0])+'m/s', xy=(5, -10))    
         #ax.annotate('v='+str(X_old[3,1])+'m/s', xy=(5, 10))

@@ -7,7 +7,7 @@ def save_plot(params,step):
     plot_fname = params.outdir+'/'+params.plot_fname
     plot_format = params.plot_format
     img_array = []
-    fps = 2
+    fps = 3
     
     if os.path.exists(out_fname):
         os.remove(out_fname)
