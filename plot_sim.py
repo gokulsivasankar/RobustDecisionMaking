@@ -99,7 +99,7 @@ def plot_sim(X_old, params, step, Level_ratio):
 
 
     
-       
+    count = 0
     for id in range(0,len(X_old[0,:])):
         rect = np.array(
             [[X_old[0, id] - l_car / 2 * math.cos(X_old[2, id]) - w_car / 2 * math.sin(X_old[2, id]),
@@ -216,7 +216,7 @@ def plot_sim(X_old, params, step, Level_ratio):
         # plot the disturbance set from the perspective of the AV
         dist_comb = params.dist_comb
         w_ext = dist_comb[3]    # choosing [1 1]
-        W_curr = w_ext * np.array([l_car / 1.85, w_car / 2])
+        W_curr = w_ext * np.array([l_car / params.W_l_car_fac, w_car / params.W_w_car_fac])
 
             # count = 0
             # for car_id in range(0, params.num_cars):
@@ -227,7 +227,7 @@ def plot_sim(X_old, params, step, Level_ratio):
 
         ego_car_id = 1 # AV id
 
-        P0 = Level_ratio[ego_car_id * (params.num_cars - 1) + id - 1, 0]
+        P0 = Level_ratio[ego_car_id * (params.num_cars-1) + count, 0]
 
         if params.sim_case == 0:
             W_curr *= 0
@@ -255,12 +255,17 @@ def plot_sim(X_old, params, step, Level_ratio):
                      linestyle='-.')
             plt.plot([dist_rect[0, 0], dist_rect[3, 0]], [dist_rect[0, 1], dist_rect[3, 1]], color=color[color_id], LineWidth=car_rect_lw+1,
                      linestyle='-.')
+            count += 1
 
 
     #fig = plt.figure()
     # Setting axes limts
     ax.set_xlim(x_lim)
     ax.set_ylim(y_lim)
+
+    for axis in ['top', 'bottom', 'left', 'right']:
+        ax.spines[axis].set_linewidth(0)
+
     
     # Display Car_id
     for id in range(0, len(X_old[0,:])):
@@ -274,7 +279,7 @@ def plot_sim(X_old, params, step, Level_ratio):
         
     plt.yticks([])
     # plt.xlabel('x (m)')
-    ax.axis('off')
+    # ax.axis('off')
 
     plt.savefig(params.outdir+'/'+params.plot_fname+str(step)+plot_format, dpi=1200)
     plt.show(block=False)

@@ -29,11 +29,11 @@ def reward(X_reward, car_id, action_id, params, dist_id, Level_ratio):
             scale_dist = 0
 
         elif params.sim_case == 1:
-            W_curr = w_ext * np.array([l_car / 1.85, w_car / 2])
+            W_curr = w_ext * np.array([l_car / params.W_l_car_fac, w_car / params.W_w_car_fac])
             scale_dist = 1
 
         else:
-            W_curr = w_ext * np.array([l_car / 1.85, w_car / 2])
+            W_curr = w_ext * np.array([l_car / params.W_l_car_fac, w_car / params.W_w_car_fac])
             scale_dist = 0
         
      
@@ -103,9 +103,16 @@ def reward(X_reward, car_id, action_id, params, dist_id, Level_ratio):
     Safe = 0
     Safe_Penalty = -1e4      # 500
 
-    l_car_safe_front = 1.2*l_car
-    l_car_safe_back = 1.15*l_car
-    w_car_safe = 1.15*w_car
+    if params.sim_case == 0:
+        l_car_safe_front = 1 * l_car
+        l_car_safe_back = 1 * l_car
+        w_car_safe = 1 * w_car
+    else:
+        l_car_safe_front = 1*l_car
+        l_car_safe_back = 1*l_car
+        w_car_safe = 1*w_car
+
+
 
 
     Ego_rectangle = Polygon(
@@ -206,7 +213,10 @@ def reward(X_reward, car_id, action_id, params, dist_id, Level_ratio):
         
  
     # Speed reward
-    Speed = -1e2*abs(X_reward[3, car_id] - v_ref)
+    if lane == num_lanes:
+        Speed = -1e2*abs(X_reward[3, car_id] - v_ref*1.05)
+    else:
+        Speed = -1e2 * abs(X_reward[3, car_id] - v_ref)
 
 
     
@@ -237,9 +247,9 @@ def reward(X_reward, car_id, action_id, params, dist_id, Level_ratio):
 
 
     # Local Reward
-    R_l = (Off_road + Colli  + Safe  *0 + Complete + Speed + Effort*0  + Lane *0  + Lane_overlap *0 + Brake*0)
-    if X_reward[4,car_id] == 1 and not(abs(X_reward[6,car_id]-(X_reward[1,car_id])) <= w_lane/2.15):
-        R_l = (Off_road + Colli + Safe *0 + Complete - Speed * 1e0+ Effort *0+ Lane *0 + Lane_overlap*0 + Brake*0)
+    R_l = (Off_road + Colli  + Safe   + Complete + Speed + Effort*0  + Lane *0  + Lane_overlap *0 + Brake*0)
+    if X_reward[4,car_id] == 1 and not(abs(X_reward[6,car_id]-(X_reward[1,car_id])) <= w_lane/2):
+        R_l = (Off_road + Colli + Safe  + Complete + Speed * 1e-2+ Effort *0+ Lane *0 + Lane_overlap*0 + Brake*0)
 
     params.complete_flag = complete_flag
 

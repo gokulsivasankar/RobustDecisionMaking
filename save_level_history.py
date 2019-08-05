@@ -3,8 +3,17 @@ import os
 
 
 def save_level_history(params, step):
-    out_fname = params.outdir + '/' + 'level_history.mp4'
-    plot_fname = params.outdir + '/' + 'level_ratio_history'
+    if params.sim_case == 0:
+        out_fname = params.outdir + '/' + 'level_history_agg.mp4'
+        plot_fname = params.outdir + '/' + 'level_ratio_history_agg'
+    elif params.sim_case == 1:
+        out_fname = params.outdir + '/' + 'level_history_adp.mp4'
+        plot_fname = params.outdir + '/' + 'level_ratio_history_adp'
+    else:
+        out_fname = params.outdir + '/' + 'level_history_con.mp4'
+        plot_fname = params.outdir + '/' + 'level_ratio_history_con'
+
+
     plot_format = params.plot_format
     img_array = []
 

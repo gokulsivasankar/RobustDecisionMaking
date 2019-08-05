@@ -4,6 +4,13 @@ import numpy as np
 
 def plot_level_ratio(Level_ratio_history, ego_car_id, opp_car_id, params, step, episode, max_step):
 
+    if params.sim_case == 0:
+        plot_fname = params.outdir + '/' + 'level_ratio_history_agg'
+    elif params.sim_case == 1:
+        plot_fname = params.outdir + '/' + 'level_ratio_history_adp'
+    else:
+        plot_fname = params.outdir + '/' + 'level_ratio_history_con'
+
     num_cars = params.num_cars
     plot_format = params.plot_format
 
@@ -20,8 +27,7 @@ def plot_level_ratio(Level_ratio_history, ego_car_id, opp_car_id, params, step, 
     ax.set_xlim(x_lim)
     ax.set_ylim([0, 1])
 
-    plt.savefig(params.outdir+'/'+'level_ratio_history'+str(step)+plot_format, dpi=1200)
+    plt.savefig(params.outdir+'/'+plot_fname+str(step)+plot_format, dpi=1200)
     plt.show(block=False)
     plt.pause(0.001)
     plt.clf()
-

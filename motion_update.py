@@ -21,7 +21,7 @@ def motion_update(X_old, car_id, action_id, t_step, params):
     steer_angle_lane = math.pi/4
     max_acc = 4
     max_dec = 5
-    nom_acc = 2.5
+    nom_acc = 2
     nom_dec = 2.5
     
 #    if X_new[4,car_id] == 0:

@@ -2,46 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e4bee64e-9997-4003-8086-dc88046a3b31" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/plot_level_ratio.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/save_level_history.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Images/l1_2a.mp4" beforeDir="false" afterPath="$PROJECT_DIR$/Images/l1_2a.mp4" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Images/plot0.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Images/plot0.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Images/plot1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Images/plot1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Images/plot10.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Images/plot10.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Images/plot11.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Images/plot11.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Images/plot12.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Images/plot12.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Images/plot13.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Images/plot13.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Images/plot14.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Images/plot14.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Images/plot15.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Images/plot15.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Images/plot16.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Images/plot16.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Images/plot17.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Images/plot17.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Images/plot18.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Images/plot18.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Images/plot19.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Images/plot19.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Images/plot2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Images/plot2.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Images/plot20.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Images/plot20.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Images/plot21.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Images/plot21.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Images/plot22.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Images/plot22.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Images/plot23.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Images/plot23.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Images/plot24.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Images/plot24.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Images/plot25.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Images/plot25.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Images/plot26.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Images/plot26.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Images/plot27.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Images/plot27.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Images/plot28.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Images/plot28.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Images/plot29.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Images/plot29.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Images/plot3.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Images/plot3.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Images/plot4.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Images/plot4.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Images/plot5.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Images/plot5.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Images/plot6.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Images/plot6.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Images/plot7.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Images/plot7.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Images/plot8.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Images/plot8.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Images/plot9.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Images/plot9.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Init_position.py" beforeDir="false" afterPath="$PROJECT_DIR$/Init_position.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/env_sim.py" beforeDir="false" afterPath="$PROJECT_DIR$/env_sim.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/get_params.py" beforeDir="false" afterPath="$PROJECT_DIR$/get_params.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/motion_update.py" beforeDir="false" afterPath="$PROJECT_DIR$/motion_update.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plot_level_ratio.py" beforeDir="false" afterPath="$PROJECT_DIR$/plot_level_ratio.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/plot_sim.py" beforeDir="false" afterPath="$PROJECT_DIR$/plot_sim.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/reward.py" beforeDir="false" afterPath="$PROJECT_DIR$/reward.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/save_plot.py" beforeDir="false" afterPath="$PROJECT_DIR$/save_plot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/save_level_history.py" beforeDir="false" afterPath="$PROJECT_DIR$/save_level_history.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -51,11 +20,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/env_sim.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-150">
-              <caret line="2" column="12" lean-forward="true" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
+            <state relative-caret-position="254">
+              <caret line="162" selection-start-line="162" selection-end-line="162" />
               <folding>
                 <element signature="e#35#52#0" expanded="true" />
               </folding>
@@ -64,13 +33,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/save_plot.py">
+        <entry file="file:///Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/codecs.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="36" selection-start-line="7" selection-start-column="36" selection-end-line="7" selection-end-column="36" />
-              <folding>
-                <element signature="e#0#10#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="270">
+              <caret line="310" selection-start-line="310" selection-end-line="310" />
             </state>
           </provider>
         </entry>
@@ -78,8 +44,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/save_level_history.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="25" column="17" selection-start-line="25" selection-start-column="17" selection-end-line="25" selection-end-column="17" />
+            <state relative-caret-position="75">
+              <caret line="5" column="4" selection-start-line="5" selection-start-column="4" selection-end-line="13" selection-end-column="68" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
               </folding>
@@ -90,29 +56,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/DecisionTree_L11.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="16" selection-start-line="16" selection-end-line="16" />
+            <state relative-caret-position="525">
+              <caret line="35" selection-start-line="35" selection-end-line="35" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/get_params.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="25" column="28" selection-start-line="25" selection-start-column="28" selection-end-line="25" selection-end-column="28" />
-              <folding>
-                <element signature="e#0#18#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/plot_sim.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2099">
-              <caret line="258" selection-start-line="258" selection-end-line="258" />
+            <state relative-caret-position="3435">
+              <caret line="229" column="57" selection-start-line="229" selection-start-column="57" selection-end-line="229" selection-end-column="57" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
               </folding>
@@ -123,8 +77,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/plot_level_ratio.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="17" column="107" selection-start-line="17" selection-start-column="24" selection-end-line="17" selection-end-column="107" />
+            <state relative-caret-position="465">
+              <caret line="31" column="20" selection-start-line="31" selection-start-column="20" selection-end-line="31" selection-end-column="20" />
               <folding>
                 <element signature="e#0#31#0" expanded="true" />
               </folding>
@@ -135,20 +89,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/reward.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="540">
-              <caret line="36" column="25" selection-start-line="36" selection-start-column="25" selection-end-line="36" selection-end-column="25" />
-              <folding>
-                <element signature="e#0#11#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/motion_update.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="17" column="29" selection-start-line="17" selection-start-column="29" selection-end-line="17" selection-end-column="29" />
+            <state relative-caret-position="520">
+              <caret line="250" column="95" selection-start-line="250" selection-start-column="95" selection-end-line="250" selection-end-column="95" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
               </folding>
@@ -159,8 +101,32 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Init_position.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-109">
-              <caret line="54" column="19" selection-start-line="54" selection-start-column="19" selection-end-line="54" selection-end-column="19" />
+            <state relative-caret-position="263">
+              <caret line="49" column="33" selection-start-line="49" selection-start-column="33" selection-end-line="49" selection-end-column="33" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/motion_update.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="360">
+              <caret line="24" column="17" selection-start-line="24" selection-start-column="17" selection-end-line="24" selection-end-column="17" />
+              <folding>
+                <element signature="e#0#11#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/get_params.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="559">
+              <caret line="40" column="37" selection-start-line="40" selection-start-column="37" selection-end-line="40" selection-end-column="37" />
+              <folding>
+                <element signature="e#0#18#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -184,6 +150,8 @@
       <find>step</find>
       <find>safe_rect</find>
       <find>x_old</find>
+      <find>t_step_DT_2</find>
+      <find>w_car</find>
     </findStrings>
     <replaceStrings>
       <replace>id</replace>
@@ -191,6 +159,8 @@
       <replace>safe_rect</replace>
       <replace>id_1</replace>
       <replace>dist_rect</replace>
+      <replace>l_car_safe</replace>
+      <replace>w_car_safe</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -205,15 +175,15 @@
         <option value="$PROJECT_DIR$/DecisionTree_L1.py" />
         <option value="$PROJECT_DIR$/DecisionTree_L11.py" />
         <option value="$PROJECT_DIR$/decisiontree_l01.py" />
-        <option value="$PROJECT_DIR$/get_params.py" />
         <option value="$PROJECT_DIR$/save_plot.py" />
-        <option value="$PROJECT_DIR$/Init_position.py" />
-        <option value="$PROJECT_DIR$/motion_update.py" />
-        <option value="$PROJECT_DIR$/reward.py" />
-        <option value="$PROJECT_DIR$/plot_level_ratio.py" />
         <option value="$PROJECT_DIR$/save_level_history.py" />
-        <option value="$PROJECT_DIR$/plot_sim.py" />
+        <option value="$PROJECT_DIR$/plot_level_ratio.py" />
+        <option value="$PROJECT_DIR$/motion_update.py" />
+        <option value="$PROJECT_DIR$/get_params.py" />
+        <option value="$PROJECT_DIR$/Init_position.py" />
+        <option value="$PROJECT_DIR$/reward.py" />
         <option value="$PROJECT_DIR$/env_sim.py" />
+        <option value="$PROJECT_DIR$/plot_sim.py" />
       </list>
     </option>
   </component>
@@ -367,7 +337,21 @@
       <option name="project" value="LOCAL" />
       <updated>1562610419843</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="plotting car images">
+      <created>1564767040298</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1564767040298</updated>
+    </task>
+    <task id="LOCAL-00012" summary="simulation case study">
+      <created>1565005834166</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1565005834166</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -379,8 +363,8 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.6063894" weight="0.3552239" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.6769138" weight="0.25870648" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.6063894" visible="true" weight="0.2885572" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.6769138" weight="0.27761194" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -397,18 +381,8 @@
     <MESSAGE value="first commit" />
     <MESSAGE value="saving video" />
     <MESSAGE value="plotting car images" />
-    <option name="LAST_COMMIT_MESSAGE" value="plotting car images" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/plot_sim.py</url>
-          <line>258</line>
-          <option name="timeStamp" value="102" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="simulation case study" />
+    <option name="LAST_COMMIT_MESSAGE" value="simulation case study" />
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="evaluateCodeFragment">
@@ -420,68 +394,52 @@
     </expressions>
     <expressions id="evaluateExpression">
       <expression>
-        <expression-string>W_curr *= P0</expression-string>
+        <expression-string>ego_car_id * (params.num_cars-1) - 1 + count</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>P0 = Level_ratio[ego_car_id * (params.num_cars - 1) + id - 1, 0]</expression-string>
+        <expression-string>ego_car_id * (params.num_cars) + id - 1</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>ego_car_id = 1
-opp_car_id = 3
-
-P0 = Level_ratio[ego_car_id * (params.num_cars - 1) + opp_car_id - 1, 0]</expression-string>
+        <expression-string>ego_car_id * (params.num_cars - 1) + id - 1</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>dist_rect = np.array(
-    [[X_old[0, id] - l_car / 2 * math.cos(X_old[2, id]) + w_car / 2 * math.sin(X_old[2, id]) - W_curr[0],
-      X_old[1, id] - l_car / 2 * math.sin(X_old[2, id]) - w_car / 2 * math.cos(X_old[2, id]) - W_curr[1]],
-     [X_old[0, id] - l_car / 2 * math.cos(X_old[2, id]) - w_car / 2 * math.sin(X_old[2, id]) - W_curr[0],
-      X_old[1, id] - l_car / 2 * math.sin(X_old[2, id]) + w_car / 2 * math.cos(X_old[2, id]) + W_curr[1]],
-     [X_old[0, id] + l_car / 2 * math.cos(X_old[2, id]) - w_car / 2 * math.sin(X_old[2, id]) + W_curr[0],
-      X_old[1, id] + l_car / 2 * math.sin(X_old[2, id]) + w_car / 2 * math.cos(X_old[2, id]) + W_curr[1]],
-     [X_old[0, id] + l_car / 2 * math.cos(X_old[2, id]) + w_car / 2 * math.sin(X_old[2, id]) + W_curr[0],
-      X_old[1, id] + l_car / 2 * math.sin(X_old[2, id]) - w_car / 2 * math.cos(X_old[2, id]) - W_curr[1]]])</expression-string>
+        <expression-string>L1_action_id[inter_car][0]</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>X_old[0, id] - l_car / 2 * math.cos(X_old[2, id]) + w_car / 2 * math.sin(X_old[2, id]) - W_curr[0]</expression-string>
+        <expression-string>L1_action_id_action_id[inter_car][0]</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>dist_rect = np.array([[X_old[0, id] - l_car / 2 * math.cos(X_old[2, id]) + w_car / 2 * math.sin(X_old[2, id] - W_curr[0]), X_old[1, id] - l_car / 2 * math.sin(X_old[2, id]) - w_car / 2 * math.cos(X_old[2, id] - W_curr[1])], [X_old[0, id] - l_car / 2 * math.cos(X_old[2, id]) - w_car / 2 * math.sin(X_old[2, id - W_curr[0]]), X_old[1, id] - l_car / 2 * math.sin(X_old[2, id]) + w_car / 2 * math.cos(X_old[2, id + W_curr[1]])], [X_old[0, id] + l_car / 2 * math.cos(X_old[2, id]) - w_car / 2 * math.sin(X_old[2, id + W_curr[0]]), X_old[1, id] + l_car / 2 * math.sin(X_old[2, id]) + w_car / 2 * math.cos(X_old[2, id + W_curr[1]])], [X_old[0, id] + l_car / 2 * math.cos(X_old[2, id]) + w_car / 2 * math.sin(X_old[2, id + W_curr[0]]), X_old[1, id] + l_car / 2 * math.sin(X_old[2, id]) - w_car / 2 * math.cos(X_old[2, id - W_curr[1]])]])</expression-string>
+        <expression-string>L0_action_id[inter_car][0]</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>dist_rect = np.array([[X_old[0, id] - l_car / 2 * math.cos(X_old[2, id]) + w_car / 2 * math.sin(
-    X_old[2, id] - W_curr[0]), X_old[1, id] - l_car / 2 * math.sin(X_old[2, id]) - w_car / 2 * math.cos(
-    X_old[2, id] - W_curr[1])], [X_old[0, id] - l_car / 2 * math.cos(X_old[2, id]) - w_car / 2 * math.sin(
-    X_old[2, id - W_curr[0]]), X_old[1, id] - l_car / 2 * math.sin(X_old[2, id]) + w_car / 2 * math.cos(
-    X_old[2, id + W_curr[1]])], [X_old[0, id] + l_car / 2 * math.cos(X_old[2, id]) - w_car / 2 * math.sin(
-    X_old[2, id + W_curr[0]]), X_old[1, id] + l_car / 2 * math.sin(X_old[2, id]) + w_car / 2 * math.cos(
-    X_old[2, id + W_curr[1]])], [X_old[0, id] + l_car / 2 * math.cos(X_old[2, id]) + w_car / 2 * math.sin(
-    X_old[2, id + W_curr[0]]), X_old[1, id] + l_car / 2 * math.sin(X_old[2, id]) - w_car / 2 * math.cos(
-    X_old[2, id - W_curr[1]])]])</expression-string>
+        <expression-string>L0_action_id[inter_car][0]==L1_action_id[inter_car][0]</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>dist_rect = np.array(             [[X_old[0, id] - l_car / 2 * math.cos(X_old[2, id]) + w_car / 2 * math.sin(X_old[2, id] - W_curr[0]),               X_old[1, id] - l_car / 2 * math.sin(X_old[2, id]) - w_car / 2 * math.cos(X_old[2, id] - W_curr[1])],              [X_old[0, id] - l_car / 2 * math.cos(X_old[2, id]) - w_car / 2 * math.sin(X_old[2, id - W_curr[0]]),               X_old[1, id] - l_car / 2 * math.sin(X_old[2, id]) + w_car / 2 * math.cos(X_old[2, id + W_curr[1]])],              [X_old[0, id] + l_car / 2 * math.cos(X_old[2, id]) - w_car / 2 * math.sin(X_old[2, id + W_curr[0]]),               X_old[1, id] + l_car / 2 * math.sin(X_old[2, id]) + w_car / 2 * math.cos(X_old[2, id + W_curr[1]])],              [X_old[0, id] + l_car / 2 * math.cos(X_old[2, id]) + w_car / 2 * math.sin(X_old[2, id + W_curr[0]]),               X_old[1, id] + l_car / 2 * math.sin(X_old[2, id]) - w_car / 2 * math.cos(X_old[2, id - W_curr[1]])]])</expression-string>
+        <expression-string>(L0_action_id[inter_car][0]</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>dist_comb = params.dist_comb 
-w_ext = dist_comb[3]    # choosing [1 1]
-W_curr = w_ext * np.array([l_car / 1.89, w_car / 2])</expression-string>
+        <expression-string>L1_action_id[car_id][0]</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>params.plot_fname</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
@@ -544,87 +502,84 @@ W_curr = w_ext * np.array([l_car / 1.89, w_car / 2])</expression-string>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/motion_update.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="29" selection-start-line="17" selection-start-column="29" selection-end-line="17" selection-end-column="29" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Init_position.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-109">
-          <caret line="54" column="19" selection-start-line="54" selection-start-column="19" selection-end-line="54" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/save_plot.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="36" selection-start-line="7" selection-start-column="36" selection-end-line="7" selection-end-column="36" />
+        <state relative-caret-position="150">
+          <caret line="10" column="4" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="4" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/save_level_history.py">
+    <entry file="file:///Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/codecs.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="25" column="17" selection-start-line="25" selection-start-column="17" selection-end-line="25" selection-end-column="17" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="270">
+          <caret line="310" selection-start-line="310" selection-end-line="310" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/DecisionTree_L11.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" selection-start-line="16" selection-end-line="16" />
+        <state relative-caret-position="525">
+          <caret line="35" selection-start-line="35" selection-end-line="35" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/get_params.py">
+    <entry file="file://$PROJECT_DIR$/save_level_history.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="25" column="28" selection-start-line="25" selection-start-column="28" selection-end-line="25" selection-end-column="28" />
+        <state relative-caret-position="75">
+          <caret line="5" column="4" selection-start-line="5" selection-start-column="4" selection-end-line="13" selection-end-column="68" />
           <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/reward.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="36" column="25" selection-start-line="36" selection-start-column="25" selection-end-line="36" selection-end-column="25" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
+            <element signature="e#0#10#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/plot_level_ratio.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="107" selection-start-line="17" selection-start-column="24" selection-end-line="17" selection-end-column="107" />
+        <state relative-caret-position="465">
+          <caret line="31" column="20" selection-start-line="31" selection-start-column="20" selection-end-line="31" selection-end-column="20" />
           <folding>
             <element signature="e#0#31#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/plot_sim.py">
+    <entry file="file://$PROJECT_DIR$/reward.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2099">
-          <caret line="258" selection-start-line="258" selection-end-line="258" />
+        <state relative-caret-position="520">
+          <caret line="250" column="95" selection-start-line="250" selection-start-column="95" selection-end-line="250" selection-end-column="95" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/get_params.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="559">
+          <caret line="40" column="37" selection-start-line="40" selection-start-column="37" selection-end-line="40" selection-end-column="37" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Init_position.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="263">
+          <caret line="49" column="33" selection-start-line="49" selection-start-column="33" selection-end-line="49" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/motion_update.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="24" column="17" selection-start-line="24" selection-start-column="17" selection-end-line="24" selection-end-column="17" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
           </folding>
@@ -633,10 +588,20 @@ W_curr = w_ext * np.array([l_car / 1.89, w_car / 2])</expression-string>
     </entry>
     <entry file="file://$PROJECT_DIR$/env_sim.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-150">
-          <caret line="2" column="12" lean-forward="true" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
+        <state relative-caret-position="254">
+          <caret line="162" selection-start-line="162" selection-end-line="162" />
           <folding>
             <element signature="e#35#52#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/plot_sim.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3435">
+          <caret line="229" column="57" selection-start-line="229" selection-start-column="57" selection-end-line="229" selection-end-column="57" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
           </folding>
         </state>
       </provider>

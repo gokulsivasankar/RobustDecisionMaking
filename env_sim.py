@@ -159,7 +159,7 @@ for episode in range(0, params.max_episode):    # simulation will be runned 1 ti
             else:
                 Action_id[car_id] = L1_action_id[car_id][0]
                 # Action_id[car_id] = L0_action_id[car_id][0]
-#                Action_id[car_id] = D1_action_id[car_id]
+                # Action_id[car_id] = D1_action_id[car_id]
         print(Action_id)
 
         # Level estimation update

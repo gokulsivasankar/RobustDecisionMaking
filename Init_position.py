@@ -47,7 +47,7 @@ def Init_position(params,traffic,AV_cars):
         elif id == 1: # AV
            lane = 2
            lane_center = w_lane*(lane-1) + (w_lane/2) # second lane
-           x_car = 0 +x_init + 0.8*l_car
+           x_car = 0 +x_init + 0.*l_car
 #            x_car = 2*l_car
            y_car = lane_center
            Final_y = w_lane*(lane) + (w_lane/2) # third lane

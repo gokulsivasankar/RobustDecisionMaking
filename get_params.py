@@ -38,7 +38,9 @@ def get_params():
                 fps = 3,
                 sim_case = 1,
                 l_car_safe_fac = 1.1,
-                w_car_safe_fac = 1)
+                w_car_safe_fac = 1.25,
+                W_l_car_fac = 1.5,
+                W_w_car_fac = 3)
 
     params.complete_flag = np.zeros((params.max_episode,params.num_cars))
     
