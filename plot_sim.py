@@ -23,6 +23,9 @@ def plot_sim(X_old, params, step, Level_ratio):
     x_lim_max = max(X_old[0, :]) + 3 * l_car
     x_lim = np.array([x_lim_min, x_lim_max])
 
+    l_car_safe = params.l_car_safe_fac * l_car
+    w_car_safe = params.w_car_safe_fac * w_car
+
 
     color = ['b','r','m','g']
     plt.cla()
@@ -62,7 +65,7 @@ def plot_sim(X_old, params, step, Level_ratio):
 
     y_lim = [min(Lower_RoadBound_rectangle[:, 1]), max(Upper_RoadBound_rectangle[:, 1])]
 
-    # Plotting grass
+    # Plotting grass (green patch)
     plt.fill(np.squeeze(Upper_RoadBound_rectangle[:,0]),np.squeeze(Upper_RoadBound_rectangle[:,1]),color=(0,0.4,0,0.6), LineWidth = 2)
     plt.fill(np.squeeze(Lower_RoadBound_rectangle[:,0]),np.squeeze(Lower_RoadBound_rectangle[:,1]),color=(0,0.4,0,0.6), LineWidth = 2)
 
@@ -112,8 +115,7 @@ def plot_sim(X_old, params, step, Level_ratio):
              [X_old[0, id] + (l_car / 2 - 1) * math.cos(X_old[2, id]) + w_car / 2 * math.sin(X_old[2, id]),
               X_old[1, id] + (l_car / 2 - 1) * math.sin(X_old[2, id]) - w_car / 2 * math.cos(X_old[2, id])]])
 
-        l_car_safe = 1 * l_car
-        w_car_safe = 1 * w_car
+
 
         coll_rect = np.array(
             [[X_old[0, id] - l_car_safe / 2 * math.cos(X_old[2, id]) + w_car_safe / 2 * math.sin(X_old[2, id]),
@@ -214,7 +216,7 @@ def plot_sim(X_old, params, step, Level_ratio):
         # plot the disturbance set from the perspective of the AV
         dist_comb = params.dist_comb
         w_ext = dist_comb[3]    # choosing [1 1]
-        W_curr = w_ext * np.array([l_car / 1.89, w_car / 2])
+        W_curr = w_ext * np.array([l_car / 1.85, w_car / 2])
 
             # count = 0
             # for car_id in range(0, params.num_cars):
@@ -226,17 +228,22 @@ def plot_sim(X_old, params, step, Level_ratio):
         ego_car_id = 1 # AV id
 
         P0 = Level_ratio[ego_car_id * (params.num_cars - 1) + id - 1, 0]
-        W_curr *= P0
+
+        if params.sim_case == 0:
+            W_curr *= 0
+        elif params.sim_case == 1:
+            W_curr *= P0
+
 
         dist_rect = np.array(
-            [[X_old[0, id] - l_car / 2 * math.cos(X_old[2, id]) + w_car / 2 * math.sin(X_old[2, id]) - W_curr[0],
-              X_old[1, id] - l_car / 2 * math.sin(X_old[2, id]) - w_car / 2 * math.cos(X_old[2, id]) - W_curr[1]],
-             [X_old[0, id] - l_car / 2 * math.cos(X_old[2, id]) - w_car / 2 * math.sin(X_old[2, id]) - W_curr[0],
-              X_old[1, id] - l_car / 2 * math.sin(X_old[2, id]) + w_car / 2 * math.cos(X_old[2, id]) + W_curr[1]],
-             [X_old[0, id] + l_car / 2 * math.cos(X_old[2, id]) - w_car / 2 * math.sin(X_old[2, id]) + W_curr[0],
-              X_old[1, id] + l_car / 2 * math.sin(X_old[2, id]) + w_car / 2 * math.cos(X_old[2, id]) + W_curr[1]],
-             [X_old[0, id] + l_car / 2 * math.cos(X_old[2, id]) + w_car / 2 * math.sin(X_old[2, id]) + W_curr[0],
-              X_old[1, id] + l_car / 2 * math.sin(X_old[2, id]) - w_car / 2 * math.cos(X_old[2, id]) - W_curr[1]]])
+            [[X_old[0, id] - l_car_safe / 2 * math.cos(X_old[2, id]) + w_car_safe / 2 * math.sin(X_old[2, id]) - W_curr[0],
+              X_old[1, id] - l_car_safe / 2 * math.sin(X_old[2, id]) - w_car_safe / 2 * math.cos(X_old[2, id]) - W_curr[1]],
+             [X_old[0, id] - l_car_safe / 2 * math.cos(X_old[2, id]) - w_car_safe / 2 * math.sin(X_old[2, id]) - W_curr[0],
+              X_old[1, id] - l_car_safe / 2 * math.sin(X_old[2, id]) + w_car_safe / 2 * math.cos(X_old[2, id]) + W_curr[1]],
+             [X_old[0, id] + l_car_safe / 2 * math.cos(X_old[2, id]) - w_car_safe / 2 * math.sin(X_old[2, id]) + W_curr[0],
+              X_old[1, id] + l_car_safe / 2 * math.sin(X_old[2, id]) + w_car_safe / 2 * math.cos(X_old[2, id]) + W_curr[1]],
+             [X_old[0, id] + l_car_safe / 2 * math.cos(X_old[2, id]) + w_car_safe / 2 * math.sin(X_old[2, id]) + W_curr[0],
+              X_old[1, id] + l_car_safe / 2 * math.sin(X_old[2, id]) - w_car_safe / 2 * math.cos(X_old[2, id]) - W_curr[1]]])
 
         if id != ego_car_id:
             # Disturbance rectangle

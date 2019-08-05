@@ -19,7 +19,9 @@ import time
 import os
 
 
-params = get_params.get_params()    # call a user-defined function
+
+# Parameters
+params = get_params.get_params()
 w_lane = params.w_lane
 v_nominal = params.v_nominal
 num_cars = params.num_cars
@@ -27,7 +29,6 @@ l_car = params.l_car
 w_car = params.w_car
 max_episode = params.max_episode
 t_step_DT = params.t_step_DT
-t_step_DT_2 = params.t_step_DT_2
 complete_flag = params.complete_flag
 AV_cars = np.array([1])
 params.num_AV = len(AV_cars)
@@ -36,14 +37,32 @@ params.num_Human = num_Human
 num_lanes = params.num_lanes
 l_road = params.l_road
 outdir = params.outdir
-params.outfile = 'L1_opt.mp4'
 
+# pick a simulation case
+# 0 - Aggressive
+# 1 - Adaptive
+# 2 - Conservative
+params.sim_case = 1
+
+# parameters based on the simulation case
+if params.sim_case == 0:
+    params.outfile = 'aggressive.mp4'
+    params.plot_fname = 'plot_agg'
+elif params.sim_case == 1:
+    params.outfile = 'adaptive.mp4'
+    params.plot_fname = 'plot_adp'
+else:
+    params.outfile = 'conservative.mp4'
+    params.plot_fname = 'plot_con'
+
+
+# number of simulation steps
 max_step = 30
 
 
-# Initial guess for the level ratio (0 1 2)
+# Initial guess for the level ratio (0 1)
 Level_ratio = np.array([[0.2, 0.8]])
-Level_ratio = np.array([[0.8, 0.2]])
+Level_ratio = np.array([[0.99, 0.01]])
 Level_ratio = np.matlib.repmat(Level_ratio, num_cars * (num_cars-1), 1)
 
 # Define the sizes of the variables

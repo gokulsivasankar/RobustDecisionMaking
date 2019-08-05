@@ -34,7 +34,11 @@ def get_params():
                 outfile = 'Test.mp4',
                 plot_fname = 'plot',
                 plot_format = '.jpg',
-                outdir = 'Images')
+                outdir = 'Images',
+                fps = 3,
+                sim_case = 1,
+                l_car_safe_fac = 1.1,
+                w_car_safe_fac = 1)
 
     params.complete_flag = np.zeros((params.max_episode,params.num_cars))
     

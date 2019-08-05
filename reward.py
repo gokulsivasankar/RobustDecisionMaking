@@ -17,15 +17,24 @@ def reward(X_reward, car_id, action_id, params, dist_id, Level_ratio):
     num_cars = params.num_cars
     v_ref = params.v_nominal
 
-    scale_dist = 1
+    l_car_safe = params.l_car_safe_fac * l_car
+    w_car_safe = params.w_car_safe_fac * w_car
     
     
     if X_reward[4,car_id] == 1:
         dist_comb = params.dist_comb
         w_ext = dist_comb[dist_id]
-        # W_curr = w_ext*np.array([l_car/2*0, w_car/2*0])
-        W_curr = w_ext * np.array([l_car / 1.89, w_car / 2])
-        # W_curr = w_ext * np.array([l_car/1.89, w_car/2])
+        if params.sim_case == 0:
+            W_curr = w_ext * np.array([0, 0])
+            scale_dist = 0
+
+        elif params.sim_case == 1:
+            W_curr = w_ext * np.array([l_car / 1.85, w_car / 2])
+            scale_dist = 1
+
+        else:
+            W_curr = w_ext * np.array([l_car / 1.85, w_car / 2])
+            scale_dist = 0
         
      
         count = 0
@@ -44,8 +53,7 @@ def reward(X_reward, car_id, action_id, params, dist_id, Level_ratio):
     Off_road = 0
     Off_road_Penalty = -1e6
 
-    l_car_safe = 1.2*l_car     # 1.2
-    w_car_safe = 1.3*w_car
+
     Ego_rectangle = Polygon(
         [[X_reward[0,car_id]-l_car_safe/2*math.cos(X_reward[2,car_id])+w_car_safe/2*math.sin(X_reward[2,car_id]),
           X_reward[1,car_id]-l_car_safe/2*math.sin(X_reward[2,car_id])-w_car_safe/2*math.cos(X_reward[2,car_id])],
@@ -95,9 +103,10 @@ def reward(X_reward, car_id, action_id, params, dist_id, Level_ratio):
     Safe = 0
     Safe_Penalty = -1e4      # 500
 
-    l_car_safe_front = 1.3*l_car
-    l_car_safe_back = 1.2*l_car
-    w_car_safe = 1.2*w_car
+    l_car_safe_front = 1.2*l_car
+    l_car_safe_back = 1.15*l_car
+    w_car_safe = 1.15*w_car
+
 
     Ego_rectangle = Polygon(
         [[X_reward[0,car_id]-l_car_safe_back/2*math.cos(X_reward[2,car_id])+w_car_safe/2*math.sin(X_reward[2,car_id]),
@@ -152,10 +161,7 @@ def reward(X_reward, car_id, action_id, params, dist_id, Level_ratio):
             Lane_overlap = Lane_overlap + Lane_overlap_penalty    
             
             
-            
-            
-            
-    
+
     
     # Lane off-center penalty
     Lane = 0
