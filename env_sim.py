@@ -95,7 +95,8 @@ for episode in range(0, params.max_episode):    # simulation will be runned 1 ti
     
 
     # Figure size
-    plt.figure(figsize=(6, 3))
+    fig_sim = plt.figure(1, figsize=(6, 3))
+    fig_lh = plt.figure(2)
 
 
     for step in range(0, max_step):
@@ -105,7 +106,10 @@ for episode in range(0, params.max_episode):    # simulation will be runned 1 ti
         print(X_old)
 
         # Animation plots
-        plot_sim.plot_sim(X_old, params, step, Level_ratio)
+        plot_sim.plot_sim(X_old, params, step, Level_ratio, fig_sim)
+
+        # Plot level history
+        Level_ratio_history[episode, step, :, :] = Level_ratio
 
 
         # L-0
@@ -179,7 +183,7 @@ for episode in range(0, params.max_episode):    # simulation will be runned 1 ti
                         count = count+1
         
         print(Level_ratio)
-        Level_ratio_history[episode, step, :, :] = Level_ratio
+
                 
         # State update
         X_new, R = Environment_Multi_Sim.Environment_Multi_Sim(X_old, Action_id, params.t_step_Sim, params)
@@ -198,7 +202,7 @@ for episode in range(0, params.max_episode):    # simulation will be runned 1 ti
         # Plot the level_history
         ego_car_id = 1  # AV
         opp_car_id = 3  # Car 4
-        # plot_level_ratio.plot_level_ratio(Level_ratio_history, ego_car_id, opp_car_id, params, step, episode, max_step)
+        plot_level_ratio.plot_level_ratio(Level_ratio_history, ego_car_id, opp_car_id, params, step, episode, max_step, fig_lh)
 
         # Timer
         t1 = time.time()
@@ -211,7 +215,7 @@ for episode in range(0, params.max_episode):    # simulation will be runned 1 ti
             break
         
 save_plot.save_plot(params,step)
-# save_level_history.save_level_history(params,step)
+save_level_history.save_level_history(params,step)
 
 # Completion ratio for monte carlo simulation
 complete_ratio = sum(complete_flag[:,1]*complete_flag[:,2])/max_episode

@@ -10,7 +10,7 @@ from PIL import Image
 from PIL import ImageChops
 
 
-def plot_sim(X_old, params, step, Level_ratio):
+def plot_sim(X_old, params, step, Level_ratio, fig):
    
     w_lane = params.w_lane
     l_car = params.l_car 
@@ -28,6 +28,7 @@ def plot_sim(X_old, params, step, Level_ratio):
 
 
     color = ['b','r','m','g']
+    plt.figure(fig.number)
     plt.cla()
     ax = plt.gca()
 
