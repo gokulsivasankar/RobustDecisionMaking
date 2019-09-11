@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e4bee64e-9997-4003-8086-dc88046a3b31" name="Default Changelist" comment="final simulation">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/env_sim.py" beforeDir="false" afterPath="$PROJECT_DIR$/env_sim.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plot_level_ratio.py" beforeDir="false" afterPath="$PROJECT_DIR$/plot_level_ratio.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plot_sim.py" beforeDir="false" afterPath="$PROJECT_DIR$/plot_sim.py" afterDir="false" />
-    </list>
+    <list default="true" id="e4bee64e-9997-4003-8086-dc88046a3b31" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -173,7 +168,14 @@
       <option name="project" value="LOCAL" />
       <updated>1565040327951</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="final simulation with level history">
+      <created>1566674874169</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1566674874169</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -194,7 +196,8 @@
     <MESSAGE value="saving video" />
     <MESSAGE value="plotting car images" />
     <MESSAGE value="simulation case study" />
-    <option name="LAST_COMMIT_MESSAGE" value="simulation case study" />
+    <MESSAGE value="final simulation with level history" />
+    <option name="LAST_COMMIT_MESSAGE" value="final simulation with level history" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
